@@ -77,171 +77,83 @@ while (!gameOver && attemptsLeft > 0)
         break;
     }
 
-    string user = Console.ReadLine();
-    if (user == "1")
+    int user = int.Parse(Console.ReadLine());
+    if (user == 1)
     {
         AnswerSomething();
     }
-    else if (user == "2")
+    else if (user == 2)
     {
         ShowQuestionsList();
-        string userInput = Console.ReadLine();
+        int userInput = int.Parse(Console.ReadLine());
         switch (userInput)
         {
-            case "1":
+            case 1:
                 {
                     League.ShowInfo();
-                    string userGuessLeague = Console.ReadLine();
+                    int userGuessLeague = int.Parse(Console.ReadLine());
 
-                    switch (userGuessLeague)
+                    if (userGuessLeague == 1)
                     {
-                        case "1":
-                            {
-                                questionsLeft--;
-                                Console.Write("\nYou're right. ");
-                                Console.WriteLine("He really plays in the EPL!\n");
-                            }
-                        break;
-                        case "2": wrong(); break;
-                        case "3": wrong(); break;
-                        case "4": wrong(); break;
-                        case "5": wrong(); break;
-                        default: break;
+                        questionsLeft--;
+                        Console.Write("\nYou're right. ");
+                        Console.WriteLine("He really plays in the EPL!\n");
                     }
+                    else if (userGuessLeague > 0 && userGuessLeague <= 5)
+                        wrong();
+                    else
+                        throw new ArgumentException("Please, enter the number from 1 to 5");
                 }
             break;
-            case "2":
+            case 2:
                 {
                     Club.ShowInfo();
-                    string userGuessClub = Console.ReadLine();
+                    int userGuessClub = int.Parse(Console.ReadLine());
 
-                    switch (userGuessClub)
+                    if (userGuessClub == 5)
                     {
-                        case "1": wrong(); break;
-                        case "2": wrong(); break;
-                        case "3": wrong(); break;
-                        case "4": wrong(); break;
-                        case "5":
-                            {
-                                questionsLeft--;
-                                Console.Write("\nYou're right. ");
-                                Console.WriteLine("He really plays for ManUtd!\n");
-                            }
-                        break;
-                        case "6": wrong(); break;
-                        case "7": wrong(); break;
-                        case "8": wrong(); break;
-                        case "9": wrong(); break;
-                        case "10": wrong(); break;
-                        case "11": wrong(); break;
-                        case "12": wrong(); break;
-                        case "13": wrong(); break;
-                        case "14": wrong(); break;
-                        case "15": wrong(); break;
-                        case "16": wrong(); break;
-                        case "17": wrong(); break;
-                        case "18": wrong(); break;
-                        case "19": wrong(); break;
-                        case "20": wrong(); break;
-                        case "21": wrong(); break;
-                        case "22": wrong(); break;
-                        case "23": wrong(); break;
-                        case "24": wrong(); break;
-                        case "25": wrong(); break;
-                        case "26": wrong(); break;
+                        questionsLeft--;
+                        Console.Write("\nYou're right. ");
+                        Console.WriteLine("He really plays for ManUtd!\n");
                     }
+                    else if (userGuessClub > 0 && userGuessClub <= 26)
+                        wrong();
+                    else
+                        throw new ArgumentException("Please, enter the number from 1 to 26");
                 }
             break;
-            case "3":
+            case 3:
                 {
                     Position.ShowInfo();
-                    string userPosition = Console.ReadLine();
+                    int userPosition = int.Parse(Console.ReadLine());
 
-                    switch (userPosition)
+                    if (userPosition == 4)
                     {
-                        case "1": wrong(); break;
-                        case "2": wrong(); break;
-                        case "3": wrong(); break;
-                        case "4":
-                            {
-                                questionsLeft--;
-                                Console.Write("\nYou're right. ");
-                                Console.WriteLine("He really plays as a forward!\n");
-                            }
-                        break;
-                        default: break;
+                        questionsLeft--;
+                        Console.Write("\nYou're right. ");
+                        Console.WriteLine("He really plays as a forward!\n");
                     }
+                    else if (userPosition > 0 && userPosition < 4)
+                        wrong();
+                    else
+                        throw new ArgumentException ("Please, enter the number from 1 to 4");
                 }
             break;
-            case "4":
+            case 4:
                 {
                     Nationality.ShowInfo();
-                    string userNationality = Console.ReadLine();
+                    int userNationality = int.Parse(Console.ReadLine());
 
-                    switch (userNationality)
+                    if (userNationality == 32)
                     {
-                        case "1": wrong(); break;
-                        case "2": wrong(); break;
-                        case "3": wrong(); break;
-                        case "4": wrong(); break;
-                        case "5": wrong(); break;
-                        case "6": wrong(); break;
-                        case "7": wrong(); break;
-                        case "8": wrong(); break;
-                        case "9": wrong(); break;
-                        case "10": wrong(); break;
-                        case "11": wrong(); break;
-                        case "12": wrong(); break;
-                        case "13": wrong(); break;
-                        case "14": wrong(); break;
-                        case "15": wrong(); break;
-                        case "16": wrong(); break;
-                        case "17": wrong(); break;
-                        case "18": wrong(); break;
-                        case "19": wrong(); break;
-                        case "20": wrong(); break;
-                        case "21": wrong(); break;
-                        case "22": wrong(); break;
-                        case "23": wrong(); break;
-                        case "24": wrong(); break;
-                        case "25": wrong(); break;
-                        case "26": wrong(); break;
-                        case "27": wrong(); break;
-                        case "28": wrong(); break;
-                        case "29": wrong(); break;
-                        case "30": wrong(); break;
-                        case "31": wrong(); break;
-                        case "32":
-                            {
-                                questionsLeft--;
-                                Console.Write("\nYou're right. ");
-                                Console.WriteLine("He is really from Denmark!\n");
-                            }
-                        break;
-                        case "33": wrong(); break;
-                        case "34": wrong(); break;
-                        case "35": wrong(); break;
-                        case "36": wrong(); break;
-                        case "37": wrong(); break;
-                        case "38": wrong(); break;
-                        case "39": wrong(); break;
-                        case "40": wrong(); break;
-                        case "41": wrong(); break;
-                        case "42": wrong(); break;
-                        case "43": wrong(); break;
-                        case "44": wrong(); break;
-                        case "45": wrong(); break;
-                        case "46": wrong(); break;
-                        case "47": wrong(); break;
-                        case "48": wrong(); break;
-                        case "49": wrong(); break;
-                        case "50": wrong(); break;
-                        case "51": wrong(); break;
-                        case "52": wrong(); break;
-                        case "53": wrong(); break;
-                        case "54": wrong(); break;
-                        default: break;
+                        questionsLeft--;
+                        Console.Write("\nYou're right. ");
+                        Console.WriteLine("He is really from Denmark!\n");
                     }
+                    else if (userNationality > 0 && userNationality <= 54)
+                        wrong();
+                    else
+                        throw new ArgumentException("Please, enter the number from 1 to 54");
                 }
             break;
             default: break;
